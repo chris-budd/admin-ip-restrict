@@ -151,13 +151,13 @@ class Admin_IP_Restrict {
 		?>
 		<div class="wrap">
 			<div id="icon-options-general" class="icon32"><br /></div>
-			<h2><?php _e( 'Admin IP Restrict', 'admin-ip-restrict' ) ?></h2>
+			<h2><?php esc_html_e( 'Admin IP Restrict', 'admin-ip-restrict' ) ?></h2>
 			<form method="post" action="options.php">
 				<?php
 				settings_fields( self::ADMIN_IP_RESTRICT_OPTIONS );
 				do_settings_sections( self::ADMIN_IP_RESTRICT_OPTIONS );
 				?>
-				<p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="<?php _e( 'Save Changes' ) ?>"></p>
+				<p class="submit"><input type="submit" name="submit" id="submit" class="button button-primary" value="<?php esc_attr_e( 'Save Changes', 'admin-ip-restrict' ) ?>"></p>
 			</form>
 		</div>
 		<?php
