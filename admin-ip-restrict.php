@@ -228,7 +228,7 @@ class Admin_IP_Restrict {
 	 */
 	public function required_ips_element() {
 		echo sprintf( '<textarea name="required-ips" id="required-ips" disabled cols="50" rows="5">%s</textarea>',
-			implode( "\n", $this->required_ips ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			esc_textarea( implode( "\n", $this->required_ips ) )
 		);
 	}
 
@@ -238,7 +238,7 @@ class Admin_IP_Restrict {
 	public function allowed_ips_element() {
 		echo sprintf( '<textarea name="%1$s" id="%1$s" cols="50" rows="10">%2$s</textarea><p>%3$s</p>',
 			esc_attr( self::ADMIN_IP_RESTRICT_LIST ),
-			implode( "\n", $this->sanitize_ip_addresses( $this->allow_list ) ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			esc_textarea( implode( "\n", $this->sanitize_ip_addresses( $this->allow_list ) ) ),
 			esc_html__( 'Enter one IP address or range per line.', 'admin-ip-restrict' ),
 		);
 	}
