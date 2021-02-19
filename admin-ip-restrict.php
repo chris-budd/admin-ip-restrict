@@ -189,7 +189,8 @@ class Admin_IP_Restrict {
 			__( 'Required IP Addresses', 'admin-ip-restrict' ),
 			array( $this, 'required_ips_element' ),
 			self::ADMIN_IP_RESTRICT_OPTIONS,
-			self::ADMIN_IP_RESTRICT_OPTIONS
+			self::ADMIN_IP_RESTRICT_OPTIONS,
+			[ 'label_for' => 'required-ips' ]
 		);
 
 		add_settings_field(
@@ -197,7 +198,8 @@ class Admin_IP_Restrict {
 			__( 'Allowed IP Addresses', 'admin-ip-restrict' ),
 			array( $this, 'allowed_ips_element' ),
 			self::ADMIN_IP_RESTRICT_OPTIONS,
-			self::ADMIN_IP_RESTRICT_OPTIONS
+			self::ADMIN_IP_RESTRICT_OPTIONS,
+			[ 'label_for' => self::ADMIN_IP_RESTRICT_LIST ]
 		);
 
 		register_setting( self::ADMIN_IP_RESTRICT_OPTIONS, self::ADMIN_IP_RESTRICT_LIST, array( $this, 'handle_ip_allow_form' ) );
@@ -214,7 +216,7 @@ class Admin_IP_Restrict {
 		if ( null !== $locked ) {
 			$disabled = 'disabled';
 		}
-		echo sprintf( '<input type="checkbox" id="checkbox_example" name="%1$s" value="1" %2$s %3$s/><label for="checkbox_example"> Check box to restrict access</label>',
+		echo sprintf( '<input type="checkbox" id="%1$s" name="%1$s" value="1" %2$s %3$s/><label for="%1$s"> Check box to restrict access</label>',
 			esc_attr( self::ADMIN_IP_RESTRICT_ACTIVE ),
 			checked( 1, $this->active, false ),
 			esc_html( $disabled )
