@@ -43,8 +43,8 @@ class Admin_IP_Restrict {
 			update_option( self::ADMIN_IP_RESTRICT_LIST, $this->allow_list );
 		}
 
-		add_filter( 'login_init', [$this, 'check_access'] );
-		add_filter( 'admin_init', [$this, 'check_access'] );
+		add_action( 'login_init', [$this, 'check_access'] );
+		add_action( 'admin_init', [$this, 'check_access'] );
 		add_action( 'admin_init', [$this, 'adminSettings'] );
 		add_action( 'admin_menu', [$this, 'menu'] );
 
@@ -118,8 +118,7 @@ class Admin_IP_Restrict {
 	/**
 	 * Check whether current request should have access
 	 */
-	public function check_access() { // phpcs:ignore WordPressVIPMinimum.Hooks.AlwaysReturnInFilter.VoidReturn, WordPressVIPMinimum.Hooks.AlwaysReturnInFilter.MissingReturnStatement
-		// Ignoring PHPCS as we're intentionally returning or dying
+	public function check_access() { 
 		$this->required_ips = $this->getRequiredIPs();
 		$this->active = apply_filters( 'admin-ip-restrict-active', $this->active );
 
