@@ -217,7 +217,7 @@ class Admin_IP_Restrict {
 		echo sprintf( '<input type="checkbox" id="checkbox_example" name="%1$s" value="1" %2$s %3$s/><label for="checkbox_example"> Check box to restrict access</label>',
 			esc_attr( self::ADMIN_IP_RESTRICT_ACTIVE ),
 			checked( 1, $this->active, false ),
-			esc_attr( $disabled )
+			esc_html( $disabled )
 		);
 	}
 
