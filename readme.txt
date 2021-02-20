@@ -40,5 +40,11 @@ You can use the `admin-ip-restrict-active` filter to lock restricted access on o
 ```
 
 == Changelog ==
+= 1.0.1 =
+* Added additional escaping
+* Added labels to textareas for accessibility
+* Added additional IP Validation for reserved/private ranges
+* Fixed incorrect filter/action calls
+
 = 1.0 =
 * Initial release
