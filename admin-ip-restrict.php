@@ -322,14 +322,14 @@ class Admin_IP_Restrict {
 		// If IP is range, validate 
 		if ( strpos( $ip_address, '/' ) !== false ) {
 			$ip_parts = explode( '/', $ip_address );
-			$valid_ip = filter_var( $ip_parts[0], FILTER_VALIDATE_IP );
+			$valid_ip = filter_var( $ip_parts[0], FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE );
 
 			if ( $valid_ip && is_numeric( $ip_parts[1] ) ) {
 				return $valid_ip . '/' . $ip_parts[1];
 			}
 		}
 
-		return filter_var( $ip_address, FILTER_VALIDATE_IP );
+		return filter_var( $ip_address, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE );
 	}
 
 }
