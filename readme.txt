@@ -3,7 +3,7 @@ Contributors: chrisbudd1
 Tags: login, protect, ip, admin, restrict
 Requires at least: 4.6
 Tested up to: 5.6
-Stable tag: 1.0
+Stable tag: 1.0.1
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html

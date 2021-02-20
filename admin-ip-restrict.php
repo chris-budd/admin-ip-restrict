@@ -2,7 +2,7 @@
 /*
 * Plugin Name: Admin IP Restrict
 * Description: Restrict WP-Admin access to a list of allowed IP addresses.
-* Version:     1.0
+* Version:     1.0.1
 * Author:      Chris Budd
 * License:     GPLv2 or later
 * License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
