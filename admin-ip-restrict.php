@@ -212,14 +212,11 @@ class Admin_IP_Restrict {
 	public function active_checkbox() {
 		// If filter in use, then lock checkbox
 		$locked = apply_filters( 'admin-ip-restrict-active', null );
-		$disabled = '';
-		if ( null !== $locked ) {
-			$disabled = 'disabled';
-		}
+
 		echo sprintf( '<input type="checkbox" id="%1$s" name="%1$s" value="1" %2$s %3$s/><label for="%1$s"> Check box to restrict access</label>',
 			esc_attr( self::ADMIN_IP_RESTRICT_ACTIVE ),
 			checked( 1, $this->active, false ),
-			esc_html( $disabled )
+			disabled( isset( $locked ), true, false )
 		);
 	}
 
